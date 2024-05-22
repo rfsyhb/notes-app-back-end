@@ -6,7 +6,7 @@ const addNoteHandler = (request, h) => {
   const { title, tag, body } = request.payload;
 
   const id = nanoid(16);
-  const createdAt = new Date().toISOString;
+  const createdAt = new Date().toISOString();
   const updatedAt = createdAt;
 
   const newNote = {
@@ -45,4 +45,4 @@ const addNoteHandler = (request, h) => {
   return response;
 };
 
-exports.module = { addNoteHandler };
+module.exports = { addNoteHandler };

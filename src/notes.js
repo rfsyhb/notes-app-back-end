@@ -1,3 +1,3 @@
 const notes = [];
 
-exports.module = notes;
+module.exports = notes;

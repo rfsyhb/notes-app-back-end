@@ -1,4 +1,4 @@
-const addNoteHandler = require('./handler');
+const { addNoteHandler } = require('./handler');
 
 const routes = [
   {
@@ -8,4 +8,4 @@ const routes = [
   },
 ];
 
-exports.module = routes;
+module.exports = routes;

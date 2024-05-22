@@ -5,6 +5,12 @@ const init = async () => {
   const server = Hapi.server({
     port: 5000,
     host: 'localhost',
+    // jika ingin seluruh route dapat diakses
+    routes: {
+      cors: {
+        origin: ['*'],
+      },
+    },
   });
 
   server.route(routes);
