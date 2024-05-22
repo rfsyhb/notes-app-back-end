@@ -3,7 +3,7 @@ const notes = require('./notes');
 
 const addNoteHandler = (request, h) => {
   // request payload
-  const { title, tag, body } = request.payload;
+  const { title, tags, body } = request.payload;
 
   const id = nanoid(16);
   const createdAt = new Date().toISOString();
@@ -11,7 +11,7 @@ const addNoteHandler = (request, h) => {
 
   const newNote = {
     title,
-    tag,
+    tags,
     body,
     id,
     createdAt,
@@ -45,4 +45,11 @@ const addNoteHandler = (request, h) => {
   return response;
 };
 
-module.exports = { addNoteHandler };
+const getAllNotesHandler = () => ({
+  status: 'success',
+  data: {
+    notes,
+  },
+});
+
+module.exports = { addNoteHandler, getAllNotesHandler };
